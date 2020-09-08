@@ -99,6 +99,20 @@ public class WebController {
 
         httpSession.removeAttribute(LINE_WEB_LOGIN_STATE);
         AccessToken token = lineAPIService.accessToken(code);
+
+        System.out.println("scope : " + token.scope);
+        System.out.println("access_token : " + token.access_token);
+        System.out.println("token_type : " + token.token_type);
+        System.out.println("expires_in : " + token.expires_in);
+        System.out.println("refresh_token : " + token.refresh_token);
+        System.out.println("id_token : " + token.id_token);
+
+        logger.debug("scope : " + token.scope);
+        logger.debug("access_token : " + token.access_token);
+        logger.debug("token_type : " + token.token_type);
+        logger.debug("expires_in : " + token.expires_in);
+        logger.debug("refresh_token : " + token.refresh_token);
+        logger.debug("id_token : " + token.id_token);
         if (logger.isDebugEnabled()) {
             logger.debug("scope : " + token.scope);
             logger.debug("access_token : " + token.access_token);
