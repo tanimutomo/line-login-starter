@@ -44,7 +44,6 @@ public class APIController {
     @RequestMapping("api/verify")
     public Verify verify(HttpSession httpSession) {
         final AccessToken token = getAccessToken(httpSession);
-        System.out.print("access token:", token);
         return lineAPIService.verify(token);
     }
 
